@@ -31,31 +31,31 @@ TopicRessource qui a pour rôle de gérer la création et consommation de messag
 
 ## Les scénarios de tests :
 Pour tester ce système vous pourrez suivre ce scénario, dans un premier temps il faut démarrer :
-• zookeeper-server-start.sh
-• kafka-server-start.sh
-• le serveur tomcat avec le service Back et Connexion
-• lancer la classe Retour.java du service ClientConnexion
+- zookeeper-server-start.sh
+- kafka-server-start.sh
+- le serveur tomcat avec le service Back et Connexion
+- lancer la classe Retour.java du service ClientConnexion
 nous allons procéder aux tests côté client, il s’agit d’une story de discussion avec trois (3) clients A, B et C
 ### Communication OneToOne :
-• lancer la classe Client du service Face ;
-• entrer le login et password de A dans la console ainsi que le channel principal ;
-• lancer la classe Client du service Face ;
-• entrer le login et password de B dans la console ainsi que le channel principal ;
-• écrire des messages d’une part et de l’autre des consoles des deux utilisateurs afin de voir que la
+- lancer la classe Client du service Face ;
+- entrer le login et password de A dans la console ainsi que le channel principal ;
+- lancer la classe Client du service Face ;
+- entrer le login et password de B dans la console ainsi que le channel principal ;
+- écrire des messages d’une part et de l’autre des consoles des deux utilisateurs afin de voir que la
 discussion fonctionne ;
-• lancer la classe Client du service Face ;
-• entrer le login et password de C dans la console ainsi que le channel secondaire ;
-• écrire un message à partir de C pour être sûr que A et B ne le reçoivent pas ;
-• écrire un message de A et vérifier que B le reçoit mais pas C ;
+- lancer la classe Client du service Face ;
+- entrer le login et password de C dans la console ainsi que le channel secondaire ;
+- écrire un message à partir de C pour être sûr que A et B ne le reçoivent pas ;
+- écrire un message de A et vérifier que B le reçoit mais pas C ;
 ### Comunication OneToMany :
-• écrire la commande « **change** » puis « secondaire » dans la console de B pour basculer dans
+- écrire la commande « **change** » puis « secondaire » dans la console de B pour basculer dans
 le channel ou se trouve C ;
-• écrire un message avec C pour vérifier que seul B reçoit ce message pas A ;
-• déconnecté A avec la commande « **disconnect** »
-• lancer la classe Client du service Face ;
-• entrer le login et password de A dans la console ainsi que le channel secondaire ;
-• écrire un message avec B pour vérifier que A et C le reçoivent ;
-• alterner l ‘envoi de messages avec les trois utilisateurs pour vérifier le fonctionnement du
+- écrire un message avec C pour vérifier que seul B reçoit ce message pas A ;
+- déconnecté A avec la commande « **disconnect** »
+- lancer la classe Client du service Face ;
+- entrer le login et password de A dans la console ainsi que le channel secondaire ;
+- écrire un message avec B pour vérifier que A et C le reçoivent ;
+- alterner l ‘envoi de messages avec les trois utilisateurs pour vérifier le fonctionnement du
 système ;
-• déconnecté les utilisateurs les uns après les autres en envoyant des messages pour vérifier qu’un
+- déconnecté les utilisateurs les uns après les autres en envoyant des messages pour vérifier qu’un
 utilisateur déconnecté n’en reçoit plus et que les autres sont informés du départ d’un des leurs ;
